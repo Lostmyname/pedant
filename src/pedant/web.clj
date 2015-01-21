@@ -1,4 +1,5 @@
 (ns pedant.web
+  (:gen-class)
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [compojure.handler :refer [site]]
@@ -13,7 +14,7 @@
   (let [checklist (slurp "checklist.md")]
     (client/post pr-url
        {:form-params {:body checklist}
-        :headers {"Authorization" (str "Basic " (env :github-token))}
+        :oauth-token (env :github-token)
         :content-type :json })))
 
 

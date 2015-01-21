@@ -11,6 +11,7 @@
             [ring.middleware.defaults :refer [wrap-defaults api-defaults]]))
 
 (defn send-checklist [pr-url]
+  (println (str "Posted to " pr-url))
   (let [checklist (slurp "checklist.md")]
     (client/post pr-url
        {:form-params {:body checklist}
@@ -20,8 +21,7 @@
 
 (defn create-pr-list [doc]
   (let [pr-url ((doc "pull_request") "comments_url")]
-    (send-checklist pr-url)
-    (println (str "Posted to " pr-url)))
+    (if (= (doc "action" ) "opened") (send-checklist pr-url)))
   {:status 200})
 
 (defroutes app-routes

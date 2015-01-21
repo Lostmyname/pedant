@@ -12,7 +12,7 @@
 
 (defn send-checklist [pr-url]
   (println (str "Posted to " pr-url))
-  (let [checklist (slurp "checklist.md")]
+  (let [checklist (slurp (env :gist-url))]
     (client/post pr-url
        {:form-params {:body checklist}
         :oauth-token (env :github-token)

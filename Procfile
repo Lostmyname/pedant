@@ -1,1 +1,1 @@
-web: java $JVM_OPTS -cp target/pedant.jar clojure.main -m pedant.web
+web: java $JVM_OPTS -jar jars/pedant-0.1.0-SNAPSHOT-standalone.jar

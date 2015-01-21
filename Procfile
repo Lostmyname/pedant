@@ -1,1 +1,1 @@
-web: java $JVM_OPTS -jar jars/pedant-0.1.0-SNAPSHOT-standalone.jar
+web: java $JVM_OPTS -jar jars/pedant-0.2.0-standalone.jar

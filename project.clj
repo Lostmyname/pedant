@@ -1,4 +1,4 @@
-(defproject pedant "0.1.0-SNAPSHOT"
+(defproject pedant "0.2.0"
   :description "Post a checklist to a pull request"
   :url "https://github.com/Lostmyname/pedant"
   :min-lein-version "2.0.0"

@@ -27,6 +27,20 @@ To start a web server for the application, run:
 
     lein ring server
 
+# Deploying
+
+To deploy to Heroku, simply create a new app, push and set your 'GITHUB_TOKEN' env var with
+
+```
+  heroku config:set GITHUB_TOKEN=<token>
+```
+
+The app is compiled in the `/jars` folder to improve the deployment speed so if you make changes to the `checklist.md` file, recompile with the following command and move the resulting standalone jar to the `jars` folder.
+
+```
+  lein ring uberjar
+```
+
 ## License
 
 MIT
